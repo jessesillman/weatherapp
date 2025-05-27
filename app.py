@@ -32,7 +32,7 @@ def get_weather(api_key, city):
 def index():
     if request.method == 'POST':
         city = request.form['city']
-        api_key = os.getenv("API_KEY")
+        api_key = os.getenv("API_KEY") # Ensure you have your API key in .env file
         weather_data = get_weather(api_key, city)
         return render_template('index.html', weather_data=weather_data)
     
